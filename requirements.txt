@@ -1,0 +1,13 @@
+requests
+# MCP Python SDK
+mcp
+# For HTTP/SSE transport
+uvicorn
+starlette
+# HTTP client
+httpx
+#.env variables
+python-dotenv
+# Testing
+pytest
+
