@@ -279,13 +279,14 @@ STEP 4: Using ONLY the data from steps 1, 2, and 3, respond in this EXACT format
     - TAC: extract from body.imei (first 8 digits) of that same event
 
 **3. Last Data Communication:** [datetime or "No data communication found"]
+    - Use get_data_session for this field
     - Use the most latest last eventDate from CDR records
-    - Include: APN, country (MCC/MNC), usage (total bytes), RAT type
+    - Include: APN, country (MCC/MNC), usage (total bytes), RAT type, TAC
 
 **4. Ongoing Data Session:** [Yes / No]
     - Yes: if get_data_session returns status "active"
     - No: if get_data_session returns status "inactive"
-    - If yes, include: APN, RAT type, session start time
+    - If yes, include: APN, RAT type, session start time, TAC
 
 **5. Total Data Usage:** [sum of all totalBytes from CDR records]
     - Total data usage is the sum of totalBytes across all CDR records 
