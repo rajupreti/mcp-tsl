@@ -243,7 +243,14 @@ async def get_cdr(imsi: str) -> str:
     RAT mapping: 1=UTRAN(3G), 2=GERAN(2G), 6=EUTRAN(4G), 11=NR(5G)
     Resolve MCC-MNC to operator name using web search tool.
     Do not add extra commentary. State the facts only.
-    When asked to develop a graph based on the data consumption use modern aesthetics.
+
+    When asked for a graph or visual, output a single self-contained HTML file using inline CSS and vanilla JS only (no external libraries).
+    Always brand the header as "TRANSATEL NETWORK ANALYTICS". Use a dark theme with these colors:
+        - Background: dark navy (#0d1117 / #161b22), font: monospace
+        - Normal data: cyan (#00d4ff), Anomalies: pink (#ff2d78)
+        - Upload: orange (#ff6b35), Download: green (#00e5a0)
+    Include a "TRANSATEL NETWORK ANALYTICS" branded header, KPI summary cards, relevant charts, and a detail table.
+    Output the full HTML inside a markdown html code block.
     """
     token = auth.gen_token()
     cdr_url = f"{CDR_API_BASE_URL}"
